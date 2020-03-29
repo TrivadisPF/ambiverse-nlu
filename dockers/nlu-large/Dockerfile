@@ -27,7 +27,7 @@ RUN set -x \
   && echo "Downloading cassandra " \
   && wget -q -O - $CASSANDRA_MIRROR | tar -xzf - -C /usr/local/
 
-ENV MAVEN_OPTS -Djetty.port=8080 -Xmx44G -Dorg.eclipse.jetty.annotations.maxWait=180
+ENV MAVEN_OPTS -Djetty.port=8080 -Xmx100G -Dorg.eclipse.jetty.annotations.maxWait=1800
 ENTRYPOINT ["mvn", "jetty:run"]
 
 EXPOSE 8080
